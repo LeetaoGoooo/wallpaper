@@ -2,7 +2,7 @@ import os
 
 real_path = os.path.realpath(__file__)
 
-macos_wallpaper_path = os.path.join(real_path, 'macos-wallpaper')
+macos_wallpaper_path = os.path.join(os.path.dirname(real_path), 'macos-wallpaper')
 
 def get_wallpaper(screen=main):
     result_str = os.popen(f'{macos_wallpaper_path} get --screen {screen}').read().strip()
