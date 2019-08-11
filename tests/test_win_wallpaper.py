@@ -1,5 +1,5 @@
 import pytest
-from wallpaper_platform import get_wallpaper, set_wallpaper
+from wallpaper import get_wallpaper, set_wallpaper
 import platform
 import os
 
@@ -22,7 +22,3 @@ def test_get_wallpaper():
     result_str = get_wallpaper()
     assert len(result_str) != 0
     assert result_str == wallpaper_path
-    
-    if platform.system() == 'Darwin':
-        result_list = get_wallpaper('all')
-        assert type(result_list) == list

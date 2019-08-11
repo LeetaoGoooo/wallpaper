@@ -2,3 +2,6 @@
 .vscode
 .pytest_cache
 venv
+py_wallpaper.egg-info
+dist
+build
