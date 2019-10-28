@@ -2,6 +2,8 @@
 
 > Get or set the desktop wallpaper
 
+![license-apache2](https://img.shields.io/badge/license-Apache%202-blue) ![python3+](https://img.shields.io/badge/license-python3%2B-brightgreen)
+
 Works on macOS 10.12+ and Windows 10+, inspired by [wallpaper node](https://github.com/sindresorhus/wallpaper)
 
 ## Install
@@ -27,53 +29,53 @@ set_wallpaper("your photo's path")
 
 ## API
 
-### .get_wallpaper(options?)
+### get_wallpaper(**options)
 
+```
 Returns the path of the current desktop wallpaper.
 
-#### options
+param::options->dict
 
-Type: `object`
+        screen *(macOS only)* -> str
 
-##### screen *(macOS only)*
+            values: `'all'`, `'main'`
 
-Type: `string | number`<br>
-Values: `'all'`, `'main'`, or the index of a screen from `.screens()`<br>
-Default: `'main'`
+            default: `'main'`
+```
 
-The screen to get the wallpaper from.
+The screen to get the wallpaper from. If you set `'all'` then `.get_wallpaper` will return a list.
 
-If you set `'all'` then `.get_wallpaper` will return a list.
+### set_wallpaper(image_path, **options)
 
-### .set_wallpaper(imagePath, options?)
 
+```
 Returns a object.
 
-#### imagePath
+param::image_path -> str
 
-Type: `string`
+    The path to the image to set as the desktop wallpaper.
 
-The path to the image to set as the desktop wallpaper.
 
-#### options
+param::options -> dict
 
-Type: `object`
+    screen *(macOS only)* ->  str
 
-##### screen *(macOS only)*
+    values: `'all'`, `'main'`, or the index of a screen from `.screens()`
 
-Type: `string | number`<br>
-Values: `'all'`, `'main'`, or the index of a screen from `.screens()`
-Default: `'all'`
+    default: `'all'`
+
 
 The screen to set the wallpaper on.
 
-##### scale *(macOS only)*
 
-Type: `string`<br>
-Values: `'auto' | 'fill' | 'fit' | 'stretch' | 'center'`<br>
-Default: `'auto'`
+param::scale *(macOS only)* -> str
+
+    values: `'auto' | 'fill' | 'fit' | 'stretch' | 'center'`
+
+    default: `'auto'`
 
 Scaling method.
+```
 
 ## TODO
 
