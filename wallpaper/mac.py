@@ -16,4 +16,4 @@ def set_wallpaper(file_path, screen = 'all', scale='auto'):
         raise TypeError("file path was expected a string")
     if not os.path.exists(file_path):
         raise FileNotFoundError(f'wallpaper file was not found in {file_path}')
-    return os.popen(f'{macos_wallpaper_path} set {file_path} --screen {screen} --scale {scale}')
+    return os.popen(f"{macos_wallpaper_path} set '{file_path}' --screen {screen} --scale {scale}")
